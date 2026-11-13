@@ -77,7 +77,7 @@ const solutions = [
   {
     icon: Radar,
     title: "Connected fleet",
-    desc: "GPS tracking, smart locks and a monitored, maintained fleet.",
+    desc: "24hrs service with a command and control center.",
     image: "/images/ops-center-dashboard.jpg",
     imageAlt: "Ecolane 24/7 fleet operations dashboard showing live GPS tracking across Nigeria",
   },
@@ -95,14 +95,14 @@ const gallery = [
     caption: "Mixed fleet, staged",
   },
   {
-    src: "/images/ebike-prototype-shop.jpg",
-    alt: "Early Ecolane e-bike prototype fitted with branding",
-    caption: "Early prototype",
+    src: "/images/scooter-row-outdoor.jpg",
+    alt: "A row of branded Ecolane e-scooters parked along a path",
+    caption: "Fleet, lined up",
   },
   {
-    src: "/images/ebike-fattire-indoor.jpg",
-    alt: "Fat-tire e-bike platform under evaluation for the Ecolane fleet",
-    caption: "Fat-tire platform",
+    src: "/images/scooter-handlebar-closeup.jpg",
+    alt: "Close-up of an Ecolane e-scooter handlebar display and QR panel",
+    caption: "Handlebar detail",
   },
 ];
 
@@ -121,13 +121,20 @@ export default function Home() {
       <section className="relative overflow-hidden bg-brand-ink">
         <div className="absolute inset-0">
           <Image
+            src="/images/rider-waist-up-mobile.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover sm:hidden"
+          />
+          <Image
             src="/images/rider-waist-up.jpg"
             alt=""
             fill
             priority
-            className="object-cover"
+            className="hidden object-cover sm:block"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/75 to-brand-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/30 via-brand-ink/35 to-brand-ink/40 sm:from-brand-ink/55 sm:via-brand-ink/35 sm:to-brand-ink/25" />
         </div>
 
         <Container className="relative py-28 lg:py-36">
@@ -153,7 +160,7 @@ export default function Home() {
           </div>
         </Container>
 
-        <div className="relative border-t border-white/10 bg-black/30 backdrop-blur-sm">
+        <div className="relative border-t border-white/10 bg-transparent sm:bg-black/15 sm:backdrop-blur-sm">
           <Container>
             <div className="grid grid-cols-1 gap-8 py-10 sm:grid-cols-3">
               {stats.map((s) => (
