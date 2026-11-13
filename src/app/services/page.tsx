@@ -158,9 +158,12 @@ export default function ServicesPage() {
                 className="object-cover"
               />
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
               {steps.map((step, i) => (
-                <div key={step.title} className="rounded-3xl bg-white p-8 shadow-sm">
+                <div
+                  key={step.title}
+                  className="w-[78%] shrink-0 snap-start rounded-3xl bg-white p-8 shadow-sm sm:w-auto sm:shrink"
+                >
                   <div className="flex items-center justify-between">
                     <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
                       <step.icon size={20} />

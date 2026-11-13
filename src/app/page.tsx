@@ -244,9 +244,12 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
               {steps.map((step, i) => (
-                <div key={step.title} className="rounded-3xl bg-white p-8 shadow-sm">
+                <div
+                  key={step.title}
+                  className="w-[78%] shrink-0 snap-start rounded-3xl bg-white p-8 shadow-sm sm:w-auto sm:shrink"
+                >
                   <div className="flex items-center justify-between">
                     <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
                       <step.icon size={20} />
@@ -394,9 +397,12 @@ export default function Home() {
           <h2 className="font-display text-center text-2xl font-extrabold text-white sm:text-3xl">
             What guides every ride
           </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="-mx-6 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
             {values.map((v) => (
-              <div key={v.title} className="text-center">
+              <div
+                key={v.title}
+                className="w-[42%] shrink-0 snap-start rounded-2xl bg-white/5 p-6 text-center sm:w-auto sm:shrink sm:rounded-none sm:bg-transparent sm:p-0"
+              >
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-brand-green-light">
                   <v.icon size={22} />
                 </div>
