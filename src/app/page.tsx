@@ -13,6 +13,7 @@ import {
   QrCode,
   Lock,
   Sparkles,
+  Star,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
@@ -489,6 +490,103 @@ export default function Home() {
                 >
                   Learn about Ecolane <ArrowRight size={16} />
                 </Link>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Download the app */}
+      <section className="bg-brand-ink py-24">
+        <Container>
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-brand-green-dark px-8 py-16 sm:px-14 lg:py-20">
+            <div
+              className="absolute -top-24 -right-16 h-72 w-72 rounded-full opacity-40 blur-3xl"
+              style={{
+                background:
+                  "radial-gradient(circle, var(--brand-green-light) 0%, transparent 70%)",
+              }}
+            />
+            <div className="relative grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
+              <div className="text-center lg:text-left">
+                <Badge tone="dark">Download the app</Badge>
+                <h2 className="font-display mt-6 text-balance text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                  Download the Ecolane app
+                </h2>
+                <p className="mx-auto mt-4 max-w-md text-white/70 lg:mx-0">
+                  Find a ride, scan to unlock and pay — all from your phone.
+                  Get the app and be ready to move.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                  <Link href="/contact" className="transition hover:opacity-80">
+                    <Image
+                      src="/images/app-store-badge.png"
+                      alt="Download on the App Store"
+                      width={7694}
+                      height={2573}
+                      className="h-11 w-36 object-contain"
+                    />
+                  </Link>
+                  <Link href="/contact" className="transition hover:opacity-80">
+                    <Image
+                      src="/images/google-play-badge.png"
+                      alt="Get it on Google Play"
+                      width={3631}
+                      height={1077}
+                      className="h-11 w-36 object-contain"
+                    />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <div className="w-56 rounded-[2.5rem] border-[6px] border-black bg-black shadow-2xl">
+                  <div className="overflow-hidden rounded-[2rem] bg-white">
+                    <div className="flex items-center justify-between px-5 pt-5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-ink">
+                        <Image
+                          src="/images/icon-mark.png"
+                          alt=""
+                          width={28}
+                          height={28}
+                        />
+                      </div>
+                      <span className="rounded-full bg-brand-green px-4 py-1.5 text-xs font-bold text-white">
+                        GET
+                      </span>
+                    </div>
+                    <div className="px-5 pt-3">
+                      <p className="font-display text-base font-bold text-brand-ink">
+                        Ecolane
+                      </p>
+                      <div className="mt-1 flex items-center gap-1 text-brand-ink/50">
+                        <Star size={12} className="fill-current" />
+                        <Star size={12} className="fill-current" />
+                        <Star size={12} className="fill-current" />
+                        <Star size={12} className="fill-current" />
+                        <Star size={12} />
+                        <span className="ml-1 text-[11px]">
+                          4+
+                        </span>
+                      </div>
+                    </div>
+                    <div className="relative mt-4 h-40 w-full overflow-hidden">
+                      <Image
+                        src="/images/ops-center-dashboard.jpg"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="px-5 py-5">
+                      <p className="text-[11px] font-semibold text-brand-ink/40">
+                        PREVIEW
+                      </p>
+                      <div className="mt-2 h-2 w-3/4 rounded-full bg-brand-mist" />
+                      <div className="mt-2 h-2 w-1/2 rounded-full bg-brand-mist" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
