@@ -102,6 +102,14 @@ export default function ServicesPage() {
       {/* Core services */}
       <section className="bg-white py-24">
         <Container>
+          <div className="relative mb-10 h-56 overflow-hidden rounded-3xl sm:h-72">
+            <Image
+              src="/images/ebike-prototype-shop.jpg"
+              alt="Early Ecolane e-bike prototype fitted with branding"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div className="grid gap-6 lg:grid-cols-2">
             {coreServices.map((s) => (
               <div
@@ -142,13 +150,12 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-[300px_1fr] lg:items-start">
-            <div className="relative hidden overflow-hidden rounded-3xl shadow-sm lg:block">
+            <div className="relative h-56 overflow-hidden rounded-3xl shadow-sm sm:h-72 lg:h-full">
               <Image
                 src="/images/scooter-qr-lock.jpg"
                 alt="Scanning the QR code on an Ecolane e-scooter to release the smart lock"
-                width={810}
-                height={1080}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
@@ -191,7 +198,17 @@ export default function ServicesPage() {
               service quality.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <div className="relative mt-10 h-56 overflow-hidden rounded-3xl sm:h-72">
+            <Image
+              src="/images/ops-center-dashboard.jpg"
+              alt="Ecolane 24/7 fleet operations dashboard showing live GPS tracking across Nigeria"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {tech.map((t) => (
               <div key={t.title} className="rounded-3xl bg-white/5 p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-brand-green-light">

@@ -45,6 +45,8 @@ export default function AboutPage() {
         eyebrow="About Ecolane"
         title="Transforming short-distance movement in Nigeria"
         description="Ecolane is a technology-enabled electric mobility company established to make everyday journeys easier, cleaner and smarter — through shared e-bikes and e-scooters, a digital platform and organised fleet operations."
+        image="/images/scooter-fleet-path.jpg"
+        imageAlt="Ecolane e-scooters lined up and ready for deployment"
       />
 
       {/* Overview */}
@@ -164,7 +166,16 @@ export default function AboutPage() {
               convenient access, dependable operations and responsible use.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="relative mt-10 h-56 overflow-hidden rounded-3xl sm:h-72">
+            <Image
+              src="/images/ebike-fattire-indoor.jpg"
+              alt="Fat-tire e-bike platform under evaluation for the Ecolane fleet"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {principles.map((p) => (
               <div key={p.title} className="rounded-3xl border border-brand-ink/10 p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
@@ -230,18 +241,28 @@ export default function AboutPage() {
                 responsibilities and sound decision-making.
               </p>
             </div>
-            <div className="rounded-3xl border border-brand-ink/10 bg-brand-mist p-10">
-              <p className="font-display text-xl font-bold text-brand-ink">
-                Ibrahim Hammed Olalekan
-              </p>
-              <p className="mt-1 text-sm font-semibold text-brand-green-dark">
-                Director
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-brand-ink/60">
-                Directs Ecolane&apos;s strategic and business development
-                objectives, supporting the establishment of a reliable and
-                scalable electric mobility service in Nigeria.
-              </p>
+            <div className="overflow-hidden rounded-3xl border border-brand-ink/10 bg-brand-mist">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/images/ops-center-dashboard.jpg"
+                  alt="Ecolane 24/7 fleet operations"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-10">
+                <p className="font-display text-xl font-bold text-brand-ink">
+                  Ibrahim Hammed Olalekan
+                </p>
+                <p className="mt-1 text-sm font-semibold text-brand-green-dark">
+                  Director
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-brand-ink/60">
+                  Directs Ecolane&apos;s strategic and business development
+                  objectives, supporting the establishment of a reliable and
+                  scalable electric mobility service in Nigeria.
+                </p>
+              </div>
             </div>
           </div>
         </Container>
@@ -282,6 +303,15 @@ export default function AboutPage() {
                 customer support and technology-enabled services.
               </p>
             </div>
+          </div>
+
+          <div className="relative mt-12 h-56 overflow-hidden rounded-3xl sm:h-72">
+            <Image
+              src="/images/ebike-render-green-closeup.jpg"
+              alt="Close-up of the Ecolane e-bike frame and branded battery pack"
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div className="mt-14 flex justify-center">

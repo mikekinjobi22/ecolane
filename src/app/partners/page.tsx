@@ -26,26 +26,31 @@ const markets = [
     icon: Home,
     title: "Residential estates & gated communities",
     desc: "Residents, domestic staff, visitors and service personnel moving within larger residential environments or between nearby facilities.",
+    image: "/images/scooter-fleet-outdoor.jpg",
   },
   {
     icon: GraduationCap,
     title: "University communities",
     desc: "Students, staff, contractors and visitors benefiting from short-distance mobility within or around campus environments.",
+    image: "/images/scooter-fleet-path.jpg",
   },
   {
     icon: Building2,
     title: "Corporate workplaces & business campuses",
     desc: "Organisations with large premises or clustered facilities considering shared electric mobility for staff and visitors.",
+    image: "/images/ops-center-dashboard.jpg",
   },
   {
     icon: Hotel,
     title: "Commercial, hospitality & leisure",
     desc: "Hotels, shopping centres and recreational facilities using shared mobility to improve visitor convenience.",
+    image: "/images/fleet-green-mixed.jpg",
   },
   {
     icon: Users,
     title: "Neighbourhood users",
     desc: "Residents, commuters and visitors needing practical short-distance journeys wherever Ecolane is operational.",
+    image: "/images/ebike-render-orange.jpg",
   },
 ];
 
@@ -92,16 +97,21 @@ export default function PartnersPage() {
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {markets.map((m) => (
-              <div key={m.title} className="rounded-3xl border border-brand-ink/10 p-8">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-ink text-brand-green-light">
-                  <m.icon size={20} />
+              <div key={m.title} className="overflow-hidden rounded-3xl border border-brand-ink/10">
+                <div className="relative h-36 w-full">
+                  <Image src={m.image} alt={m.title} fill className="object-cover" />
                 </div>
-                <h3 className="font-display mt-6 text-lg font-bold text-brand-ink">
-                  {m.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-ink/60">
-                  {m.desc}
-                </p>
+                <div className="p-8">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-ink text-brand-green-light">
+                    <m.icon size={20} />
+                  </div>
+                  <h3 className="font-display mt-6 text-lg font-bold text-brand-ink">
+                    {m.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-ink/60">
+                    {m.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -123,7 +133,17 @@ export default function PartnersPage() {
               range of stakeholders &mdash; here&apos;s who we build with.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+
+          <div className="relative mt-10 h-56 overflow-hidden rounded-3xl sm:h-72">
+            <Image
+              src="/images/ebike-render-green.jpg"
+              alt="Ecolane e-bike studio render in green, partner-branded battery pack"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {partnerTypes.map((p) => (
               <div key={p.title} className="rounded-3xl bg-white/5 p-8">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-brand-green-light">

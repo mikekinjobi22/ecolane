@@ -56,14 +56,60 @@ const steps = [
 ];
 
 const solutions = [
-  { icon: Bike, title: "Shared e-bikes", desc: "Pedal-assist electric bicycles for everyday short trips." },
-  { icon: Zap, title: "Shared e-scooters", desc: "Quick, agile electric scooters for point-to-point journeys." },
+  {
+    icon: Bike,
+    title: "Shared e-bikes",
+    desc: "Pedal-assist electric bicycles for everyday short trips.",
+    image: "/images/ebike-render-orange.jpg",
+    imageAlt: "Ecolane-branded e-bike studio render in orange",
+  },
+  {
+    icon: Zap,
+    title: "Shared e-scooters",
+    desc: "Quick, agile electric scooters for point-to-point journeys.",
+    image: "/images/fleet-green-mixed.jpg",
+    imageAlt: "Ecolane e-scooters and e-bike staged outdoors",
+  },
   { icon: Smartphone, title: "Ecolane app", desc: "Find, unlock, ride and pay — all from your phone." },
   {
     icon: Radar,
     title: "Connected fleet",
     desc: "GPS tracking, smart locks and a monitored, maintained fleet.",
     image: "/images/ops-center-dashboard.jpg",
+    imageAlt: "Ecolane 24/7 fleet operations dashboard showing live GPS tracking across Nigeria",
+  },
+];
+
+const gallery = [
+  {
+    src: "/images/ebike-render-orange.jpg",
+    alt: "Ecolane e-bike studio render in orange, partner-branded battery pack",
+    caption: "Orange colorway",
+  },
+  {
+    src: "/images/ebike-render-green.jpg",
+    alt: "Ecolane e-bike studio render in green, partner-branded battery pack",
+    caption: "Green colorway",
+  },
+  {
+    src: "/images/ebike-render-green-closeup.jpg",
+    alt: "Close-up of the Ecolane e-bike frame and branded battery pack",
+    caption: "Frame detail",
+  },
+  {
+    src: "/images/fleet-green-mixed.jpg",
+    alt: "Mixed Ecolane e-bike and e-scooter fleet staged outdoors",
+    caption: "Mixed fleet, staged",
+  },
+  {
+    src: "/images/ebike-prototype-shop.jpg",
+    alt: "Early Ecolane e-bike prototype fitted with branding",
+    caption: "Early prototype",
+  },
+  {
+    src: "/images/ebike-fattire-indoor.jpg",
+    alt: "Fat-tire e-bike platform under evaluation for the Ecolane fleet",
+    caption: "Fat-tire platform",
   },
 ];
 
@@ -119,14 +165,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden lg:block">
-              <div className="relative -rotate-2 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
+            <div className="lg:pr-14">
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl lg:-rotate-2">
                 <Image
                   src="/images/scooter-fleet-outdoor.jpg"
                   alt="Branded Ecolane e-scooters lined up and ready for deployment"
                   width={810}
                   height={1080}
-                  className="h-[26rem] w-full object-cover"
+                  className="h-72 w-full object-cover sm:h-96 lg:h-[26rem]"
+                  priority
                 />
               </div>
             </div>
@@ -206,13 +253,12 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-[300px_1fr] lg:items-start">
-            <div className="relative hidden overflow-hidden rounded-3xl shadow-sm lg:block">
+            <div className="relative h-56 overflow-hidden rounded-3xl shadow-sm sm:h-72 lg:h-full">
               <Image
                 src="/images/scooter-qr-lock.jpg"
                 alt="Scanning the QR code on an Ecolane e-scooter to release the smart lock"
-                width={810}
-                height={1080}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
@@ -264,10 +310,10 @@ export default function Home() {
                 className="group overflow-hidden rounded-3xl border border-brand-ink/10 transition-colors hover:border-brand-green/30 hover:bg-brand-mist"
               >
                 {item.image && (
-                  <div className="relative h-32 w-full overflow-hidden">
+                  <div className="relative h-40 w-full overflow-hidden sm:h-32">
                     <Image
                       src={item.image}
-                      alt="Ecolane 24/7 fleet operations dashboard showing live GPS tracking across Nigeria"
+                      alt={item.imageAlt ?? ""}
                       fill
                       className="object-cover"
                     />
@@ -284,6 +330,42 @@ export default function Home() {
                     {item.desc}
                   </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Fleet gallery */}
+      <section className="bg-white py-24">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-green-dark">
+              In the field
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
+              Every device, built and branded
+            </h2>
+            <p className="mt-4 text-brand-ink/60">
+              From studio renders to real test units, here&apos;s a closer
+              look at the hardware behind the Ecolane fleet.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
+            {gallery.map((g) => (
+              <div key={g.src}>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl">
+                  <Image
+                    src={g.src}
+                    alt={g.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-xs font-semibold text-brand-ink/50 sm:text-sm">
+                  {g.caption}
+                </p>
               </div>
             ))}
           </div>
@@ -361,17 +443,23 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                "Gated residential estates",
-                "University communities",
-                "Corporate workplaces",
-                "Hotels & leisure spots",
-              ].map((label) => (
+                { label: "Gated residential estates", image: "/images/scooter-fleet-outdoor.jpg" },
+                { label: "University communities", image: "/images/scooter-fleet-path.jpg" },
+                { label: "Corporate workplaces", image: "/images/ops-center-dashboard.jpg" },
+                { label: "Hotels & leisure spots", image: "/images/scooter-qr-lock.jpg" },
+              ].map(({ label, image }) => (
                 <div
                   key={label}
-                  className="rounded-2xl border border-brand-ink/10 bg-white p-6"
+                  className="group relative aspect-square overflow-hidden rounded-2xl"
                 >
-                  <Building2 className="text-brand-green-dark" size={20} />
-                  <p className="font-display mt-4 text-sm font-bold text-brand-ink">
+                  <Image
+                    src={image}
+                    alt={label}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/85 via-brand-ink/10 to-transparent" />
+                  <p className="font-display absolute inset-x-4 bottom-4 text-sm font-bold text-white">
                     {label}
                   </p>
                 </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MapPin, Building2, Smartphone } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Container from "@/components/ui/Container";
@@ -22,6 +23,8 @@ export default function ContactPage() {
         eyebrow="Get in touch"
         title="Let's talk about moving freely, moving smarter"
         description="Whether you're a future rider, an estate manager, a university or a corporate campus — we'd love to hear from you."
+        image="/images/ebike-fattire-indoor.jpg"
+        imageAlt="Fat-tire e-bike platform under evaluation for the Ecolane fleet"
       />
 
       <section className="bg-white py-24">
@@ -45,6 +48,15 @@ export default function ContactPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="relative mt-8 h-48 overflow-hidden rounded-3xl">
+                <Image
+                  src="/images/scooter-qr-lock.jpg"
+                  alt="Scanning the QR code on an Ecolane e-scooter to release the smart lock"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
 
