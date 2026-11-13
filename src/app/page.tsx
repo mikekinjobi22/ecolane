@@ -121,7 +121,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-brand-ink">
         <div className="absolute inset-0">
           <Image
-            src="/images/scooter-park-meadow.jpg"
+            src="/images/rider-waist-up.jpg"
             alt=""
             fill
             priority
@@ -173,10 +173,7 @@ export default function Home() {
       <section className="bg-white py-24">
         <Container>
           <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-green-dark">
-              Market context
-            </p>
-            <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
               The short-distance mobility gap
             </h2>
           </div>
@@ -296,7 +293,7 @@ export default function Home() {
                 className="group overflow-hidden rounded-3xl border border-brand-ink/10 transition-colors hover:border-brand-green/30 hover:bg-brand-mist"
               >
                 {item.image && (
-                  <div className="relative h-40 w-full overflow-hidden sm:h-32">
+                  <div className="relative h-56 w-full overflow-hidden sm:h-48">
                     <Image
                       src={item.image}
                       alt={item.imageAlt ?? ""}
@@ -333,8 +330,8 @@ export default function Home() {
               Every device, built and branded
             </h2>
             <p className="mt-4 text-brand-ink/60">
-              From studio renders to real test units, here&apos;s a closer
-              look at the hardware behind the Ecolane fleet.
+              Here&apos;s a closer look at the hardware behind the Ecolane
+              fleet.
             </p>
           </div>
 
