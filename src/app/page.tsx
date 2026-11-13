@@ -67,8 +67,8 @@ const solutions = [
     icon: Zap,
     title: "Shared e-scooters",
     desc: "Quick, agile electric scooters for point-to-point journeys.",
-    image: "/images/fleet-green-mixed.jpg",
-    imageAlt: "Ecolane e-scooters and e-bike staged outdoors",
+    image: "/images/scooter-fleet-outdoor.jpg",
+    imageAlt: "Branded Ecolane e-scooters lined up and ready for deployment",
   },
   { icon: Smartphone, title: "Ecolane app", desc: "Find, unlock, ride and pay — all from your phone." },
   {
@@ -81,16 +81,6 @@ const solutions = [
 ];
 
 const gallery = [
-  {
-    src: "/images/ebike-render-orange.jpg",
-    alt: "Ecolane e-bike studio render in orange, partner-branded battery pack",
-    caption: "Orange colorway",
-  },
-  {
-    src: "/images/ebike-render-green.jpg",
-    alt: "Ecolane e-bike studio render in green, partner-branded battery pack",
-    caption: "Green colorway",
-  },
   {
     src: "/images/ebike-render-green-closeup.jpg",
     alt: "Close-up of the Ecolane e-bike frame and branded battery pack",
@@ -126,61 +116,41 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-brand-ink">
-        <div className="bg-grid absolute inset-0 opacity-40" />
-        <div
-          className="absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full opacity-30 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, var(--brand-green-light) 0%, transparent 70%)",
-          }}
-        />
-        <Image
-          src="/images/icon-mark.png"
-          alt=""
-          width={680}
-          height={560}
-          className="pointer-events-none absolute -right-24 top-1/2 hidden w-[34rem] -translate-y-1/2 opacity-[0.12] lg:block"
-          priority
-        />
-        <Container className="relative py-28 lg:py-36">
-          <div className="grid gap-12 lg:grid-cols-[1fr_340px] lg:items-center">
-            <div className="max-w-3xl">
-              <Badge tone="dark">Electric mobility for Nigeria</Badge>
-              <h1 className="font-display mt-6 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-                Move Freely.{" "}
-                <span className="text-brand-green-light">Move Smarter.</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-                Technology-enabled shared electric mobility, transforming
-                short-distance transportation in Nigeria &mdash; launching
-                nationwide.
-              </p>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Button href="/contact" variant="primary">
-                  Get notified at launch <ArrowRight size={16} />
-                </Button>
-                <Button href="/partners" variant="ghost">
-                  Partner with Ecolane
-                </Button>
-              </div>
-            </div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/scooter-park-meadow.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/75 to-brand-ink/40" />
+        </div>
 
-            <div className="lg:pr-14">
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl lg:-rotate-2">
-                <Image
-                  src="/images/scooter-fleet-outdoor.jpg"
-                  alt="Branded Ecolane e-scooters lined up and ready for deployment"
-                  width={810}
-                  height={1080}
-                  className="h-72 w-full object-cover sm:h-96 lg:h-[26rem]"
-                  priority
-                />
-              </div>
+        <Container className="relative py-28 lg:py-36">
+          <div className="max-w-3xl">
+            <Badge tone="dark">Electric mobility for Nigeria</Badge>
+            <h1 className="font-display mt-6 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Move Freely.{" "}
+              <span className="text-brand-green-light">Move Smarter.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+              Technology-enabled shared electric mobility, transforming
+              short-distance transportation in Nigeria &mdash; launching
+              nationwide.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="/contact" variant="primary">
+                Get notified at launch <ArrowRight size={16} />
+              </Button>
+              <Button href="/partners" variant="ghost">
+                Partner with Ecolane
+              </Button>
             </div>
           </div>
         </Container>
 
-        <div className="relative border-t border-white/10 bg-white/[0.03]">
+        <div className="relative border-t border-white/10 bg-black/30 backdrop-blur-sm">
           <Container>
             <div className="grid grid-cols-1 gap-8 py-10 sm:grid-cols-3">
               {stats.map((s) => (
@@ -352,7 +322,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {gallery.map((g) => (
               <div key={g.src}>
                 <div className="relative aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl">
