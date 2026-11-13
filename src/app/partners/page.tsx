@@ -26,25 +26,29 @@ const markets = [
     icon: Home,
     title: "Residential estates & gated communities",
     desc: "Residents, domestic staff, visitors and service personnel moving within larger residential environments or between nearby facilities.",
-    image: "/images/scooter-fleet-outdoor.jpg",
+    image: "/images/Residential.jpg",
+    fit: "contain" as const,
   },
   {
     icon: GraduationCap,
     title: "University communities",
     desc: "Students, staff, contractors and visitors benefiting from short-distance mobility within or around campus environments.",
-    image: "/images/scooter-fleet-path.jpg",
+    image: "/images/university.jpg",
+    fit: "contain" as const,
   },
   {
     icon: Building2,
     title: "Corporate workplaces & business campuses",
     desc: "Organisations with large premises or clustered facilities considering shared electric mobility for staff and visitors.",
-    image: "/images/ops-center-dashboard.jpg",
+    image: "/images/workplace.jpg",
+    fit: "contain" as const,
   },
   {
     icon: Hotel,
     title: "Commercial, hospitality & leisure",
     desc: "Hotels, shopping centres and recreational facilities using shared mobility to improve visitor convenience.",
-    image: "/images/fleet-green-mixed.jpg",
+    image: "/images/recreational.jpg",
+    fit: "contain" as const,
   },
   {
     icon: Users,
@@ -98,8 +102,13 @@ export default function PartnersPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {markets.map((m) => (
               <div key={m.title} className="overflow-hidden rounded-3xl border border-brand-ink/10">
-                <div className="relative h-36 w-full">
-                  <Image src={m.image} alt={m.title} fill className="object-cover" />
+                <div className="relative h-36 w-full bg-white">
+                  <Image
+                    src={m.image}
+                    alt={m.title}
+                    fill
+                    className={m.fit === "contain" ? "object-contain p-4" : "object-cover"}
+                  />
                 </div>
                 <div className="p-8">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-ink text-brand-green-light">

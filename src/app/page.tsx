@@ -31,6 +31,7 @@ const gapCards = [
     tag: "Inefficient for micro-trips",
     tagColor: "text-red-500",
     highlight: false,
+    image: "/images/walking.jpg",
   },
   {
     title: "Ecolane",
@@ -38,6 +39,7 @@ const gapCards = [
     tag: "The optimal transit gap-filler",
     tagColor: "text-brand-green-light",
     highlight: true,
+    image: "/images/electric.jpg",
   },
   {
     title: "Cars, buses & taxis",
@@ -45,6 +47,7 @@ const gapCards = [
     tag: "Congested & expensive",
     tagColor: "text-amber-500",
     highlight: false,
+    image: "/images/carbon.jpg",
   },
 ];
 
@@ -141,7 +144,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href="/contact" variant="primary">
-                Get notified at launch <ArrowRight size={16} />
+                Download the app <ArrowRight size={16} />
               </Button>
               <Button href="/partners" variant="ghost">
                 Partner with Ecolane
@@ -182,23 +185,33 @@ export default function Home() {
             {gapCards.map((card) => (
               <div
                 key={card.title}
-                className={`rounded-3xl border p-8 ${
+                className={`overflow-hidden rounded-3xl border ${
                   card.highlight
                     ? "border-brand-green/40 bg-brand-ink text-white"
                     : "border-brand-ink/10 bg-brand-mist text-brand-ink"
                 }`}
               >
-                <h3 className="font-display text-xl font-bold">{card.title}</h3>
-                <p
-                  className={`mt-3 text-sm leading-relaxed ${
-                    card.highlight ? "text-white/70" : "text-brand-ink/60"
-                  }`}
-                >
-                  {card.desc}
-                </p>
-                <p className={`mt-8 text-xs font-bold uppercase tracking-wide ${card.tagColor}`}>
-                  {card.tag}
-                </p>
+                <div className="relative h-40 w-full bg-white">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-contain p-6"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display text-xl font-bold">{card.title}</h3>
+                  <p
+                    className={`mt-3 text-sm leading-relaxed ${
+                      card.highlight ? "text-white/70" : "text-brand-ink/60"
+                    }`}
+                  >
+                    {card.desc}
+                  </p>
+                  <p className={`mt-8 text-xs font-bold uppercase tracking-wide ${card.tagColor}`}>
+                    {card.tag}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -365,9 +378,7 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-brand-ink/60">
                 Every e-bike and e-scooter in the Ecolane fleet carries our
-                branding, GPS tracking and smart lock hardware from day one,
-                so what you see here is what rolls out onto streets across
-                Nigeria.
+                branding, GPS tracking and smart lock hardware.
               </p>
               <Button href="/services" variant="secondary" className="mt-8 border border-brand-ink/10">
                 See the full service <ArrowRight size={16} />
